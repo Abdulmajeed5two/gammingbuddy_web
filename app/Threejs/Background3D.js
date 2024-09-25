@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
 export default function Background3D() {
-  const mountRef = useRef(null); 
+  const mountRef = useRef(null); // Correctly using useRef
 
   useEffect(() => {
     if (!mountRef.current) return;

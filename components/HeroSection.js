@@ -11,7 +11,7 @@ export default function HeroSection() {
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
               Find Your Perfect Gaming Partner
             </h1>
-            <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
+            <p className="mx-auto max-w-[700px] text-black md:text-xl dark:text-gray-400">
               Connect with gamers worldwide, make new friends, and level up your gaming experience with GamingBuddy.
             </p>
           </div>
