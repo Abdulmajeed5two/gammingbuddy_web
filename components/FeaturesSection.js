@@ -1,55 +1,106 @@
-import { Users, MessageCircle, Search } from "lucide-react"
+import { useEffect } from "react";
+import gsap from "gsap";
+import { Users, MessageCircle, Search, Video, Trophy, Gift } from "lucide-react";
 
 export default function FeaturesSection() {
+  useEffect(() => {
+    gsap.fromTo(
+      ".feature-item",
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        stagger: 0.3,
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: ".feature-item",
+          start: "top 80%",
+          scroller: "[data-scroll-container]",
+        },
+      }
+    );
+  }, []);
+
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-              Experience Gaming Like Never Before
-            </h2>
-            <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              Our app brings gamers together, making it easy to find the perfect teammate for any game.
+    <section>
+      <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-20">
+        <h2 className="mx-auto max-w-2xl text-center text-3xl font-bold md:text-5xl mb-8 md:mb-12 lg:mb-16">
+          Experience Gaming Like Never Before
+        </h2>
+        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+          <a
+            href="#"
+            className="feature-item flex flex-col items-start justify-between border border-red-600 p-10 h-72 transition hover:bg-red-600 hover:text-white hover:backdrop-blur-md"
+          >
+            <div className="flex items-center justify-between w-full">
+              <h5 className="text-xl font-bold">Find Teammates</h5>
+              <Users className="w-6 h-6"/>
+            </div>
+            <p>
+              Easily connect with players who share your gaming interests and skill level. Join forces and dominate the leaderboard together.
             </p>
-          </div>
-        </div>
-        <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
-          <img
-            alt="Mobile App Mockup"
-            className="mx-auto aspect-[1/2] overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
-            height="1000"
-            src="/assets/feed.png"
-            width="500"
-          />
-          <div className="flex flex-col justify-center space-y-4">
-            <ul className="grid gap-6">
-              <li>
-                <div className="grid gap-1">
-                  <h3 className="text-xl font-bold"><Users className="inline-block w-5 h-5 mr-2" />Find Teammates</h3>
-                  <p className="text-gray-500 dark:text-gray-400">
-                    Easily connect with players who share your gaming interests and skill level.
-                  </p>
-                </div>
-              </li>
-              <li>
-                <div className="grid gap-1">
-                  <h3 className="text-xl font-bold"><MessageCircle className="inline-block w-5 h-5 mr-2" />Chat & Coordinate</h3>
-                  <p className="text-gray-500 dark:text-gray-400">
-                    Built-in chat features to plan your gaming sessions and strategize with your team.
-                  </p>
-                </div>
-              </li>
-              <li>
-                <div className="grid gap-1">
-                  <h3 className="text-xl font-bold"><Search className="inline-block w-5 h-5 mr-2" />Game Matchmaking</h3>
-                  <p className="text-gray-500 dark:text-gray-400">
-                    Advanced algorithms to match you with compatible gaming partners across various titles.
-                  </p>
-                </div>
-              </li>
-            </ul>
-          </div>
+          </a>
+          <a
+            href="#"
+            className="feature-item flex flex-col items-start justify-between border border-red-600 p-10 h-72 transition hover:bg-red-600 hover:text-white hover:backdrop-blur-md"
+          >
+            <div className="flex items-center justify-between w-full">
+              <h5 className="text-xl font-bold">Chat & Coordinate</h5>
+              <MessageCircle className="w-6 h-6"/>
+            </div>
+            <p>
+              Built-in chat features to plan your gaming sessions and strategize with your team. Stay connected and communicate effectively.
+            </p>
+          </a>
+          <a
+            href="#"
+            className="feature-item flex flex-col items-start justify-between border border-red-600 p-10 h-72 transition hover:bg-red-600 hover:text-white hover:backdrop-blur-md"
+          >
+            <div className="flex items-center justify-between w-full">
+              <h5 className="text-xl font-bold">Game Matchmaking</h5>
+              <Search className="w-6 h-6"/>
+            </div>
+            <p>
+              Advanced algorithms to match you with compatible gaming partners across various titles. Enjoy a seamless matchmaking experience.
+            </p>
+          </a>
+          <a
+            href="#"
+            className="feature-item flex flex-col items-start justify-between border border-red-600 p-10 h-72 transition hover:bg-red-600 hover:text-white hover:backdrop-blur-md"
+          >
+            <div className="flex items-center justify-between w-full">
+              <h5 className="text-xl font-bold">Stream Integration</h5>
+              <Video className="w-6 h-6"/>
+            </div>
+            <p>
+              Integrate with popular streaming platforms. Share your gameplay live and engage with your audience in real-time.
+            </p>
+          </a>
+          <a
+            href="#"
+            className="feature-item flex flex-col items-start justify-between border border-red-600 p-10 h-72 transition hover:bg-red-600 hover:text-white hover:backdrop-blur-md"
+          >
+            <div className="flex items-center justify-between w-full">
+              <h5 className="text-xl font-bold">Tournaments</h5>
+              <Trophy className="w-6 h-6"/>
+            </div>
+            <p>
+              Participate in and organize gaming tournaments. Compete for glory and prizes in a wide variety of games.
+            </p>
+          </a>
+          <a
+            href="#"
+            className="feature-item flex flex-col items-start justify-between border border-red-600 p-10 h-72 transition hover:bg-red-600 hover:text-white hover:backdrop-blur-md"
+          >
+            <div className="flex items-center justify-between w-full">
+              <h5 className="text-xl font-bold">Exclusive Content</h5>
+              <Gift className="w-6 h-6"/>
+            </div>
+            <p>
+              Access exclusive in-game content and rewards. Enjoy special items and bonuses available only to our users.
+            </p>
+          </a>
         </div>
       </div>
     </section>
